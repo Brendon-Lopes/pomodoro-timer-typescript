@@ -1,7 +1,8 @@
 function secondsToTime(seconds: number): string {
-  const minutes = Math.floor(seconds / 60);
-  const sec = (seconds % 60).toString().padStart(2, '0');
-  return `${minutes}:${sec}`;
+  const formatNumber = (n: number) => Math.floor(n).toString().padStart(2, '0');
+  const min = formatNumber(seconds / 60);
+  const sec = formatNumber(seconds % 60);
+  return `${min}:${sec}`;
 }
 
 export default secondsToTime;
